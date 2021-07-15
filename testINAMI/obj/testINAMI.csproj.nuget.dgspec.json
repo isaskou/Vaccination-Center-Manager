@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\testINAMI\\testINAMI.csproj": {}
+  },
+  "projects": {
+    "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\testINAMI\\testINAMI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\testINAMI\\testINAMI.csproj",
+        "projectName": "testINAMI",
+        "projectPath": "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\testINAMI\\testINAMI.csproj",
+        "packagesPath": "C:\\Users\\isabe\\.nuget\\packages\\",
+        "outputPath": "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\testINAMI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\isabe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
