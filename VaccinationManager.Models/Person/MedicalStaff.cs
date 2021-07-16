@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using VaccinationManager.Models.Center;
 
 namespace VaccinationManager.Models.Person
 {
@@ -7,12 +9,19 @@ namespace VaccinationManager.Models.Person
         public int Id { get; set; }
 
         [Required]
-        [MinLength(1)]
+        [MinLength(11)]
         [MaxLength(11)]
         public int InamiCode { get; set; }
 
         [Required]
         public int StaffId { get; set; }
         public Staff Staff { get; set; }
+
+        
+        //Pour la oneToOne avec VaccinationCenter (responsable)
+        public VaccinationCenter VaccinationCenter { get; set; }
+
+        //Pour la one to many
+        public IEnumerable<Injection> Injections { get; set; }
     }
 }

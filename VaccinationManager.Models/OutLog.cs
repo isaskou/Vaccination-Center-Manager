@@ -11,7 +11,7 @@ namespace VaccinationManager.Models
 {
     public class OutLog
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
 
         [Required]
         [Column(TypeName = "DATETIME")]
@@ -24,5 +24,9 @@ namespace VaccinationManager.Models
         [Required]
         public int VaccinLotId { get; set; }
         public VaccinLot VaccinLot { get; set; }
+
+        //[Required]
+        //public int InjectionId { get; set; }
+        //public Injection Injection { get; set; }
     }
 }

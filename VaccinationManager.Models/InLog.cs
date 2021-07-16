@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using VaccinationManager.Models.Vaccin;
 
 namespace VaccinationManager.Models
 {
@@ -15,5 +17,8 @@ namespace VaccinationManager.Models
         
         [Required]
         public int Quantity { get; set; }
+
+        //One to Many
+        public IEnumerable<VaccinLot> VaccinLots { get; set; }
     }
 }

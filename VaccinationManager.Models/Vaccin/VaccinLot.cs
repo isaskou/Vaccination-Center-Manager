@@ -28,6 +28,11 @@ namespace VaccinationManager.Models.Vaccin
         public int CenterId { get; set; }
         public VaccinationCenter VaccinationCenter { get; set; }
 
+        //Pour la one to Many
+        public IEnumerable<Injection> Injections { get; set; }
+
+        public IEnumerable<OutLog> OutLogs { get; set; }
+
     }
 
 }

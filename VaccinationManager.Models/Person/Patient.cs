@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VaccinationManager.Models.Adresse;
+using VaccinationManager.Models.RendezVous;
 
 namespace VaccinationManager.Models.Person
 {
@@ -33,6 +34,10 @@ namespace VaccinationManager.Models.Person
         [Required]
         public int PersonId { get; set; }
         public Person Person { get; set; }
+
+
+        //Pour la One to Many
+        public IEnumerable<Appointment> Appointments { get; set; }
 
     }
 }

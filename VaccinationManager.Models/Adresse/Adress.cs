@@ -1,4 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using VaccinationManager.Models.Center;
+using VaccinationManager.Models.Person;
+using VaccinationManager.Models.Vaccin;
 
 namespace VaccinationManager.Models.Adresse
 {
@@ -29,5 +32,13 @@ namespace VaccinationManager.Models.Adresse
         [Required]
         [EnumDataType(typeof(District))]
         public District District { get; set; }
-    }
+
+
+        //Pour les OneToOne
+        public virtual VaccinationCenter VaccinationCenter { get; set; }
+        public virtual Patient Patient
+        { get; set; }
+
+        public virtual VaccinProvider VaccinProvider { get; set; } 
+        }
 }

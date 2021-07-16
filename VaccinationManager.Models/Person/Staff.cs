@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace VaccinationManager.Models.Person
 {
@@ -13,5 +14,8 @@ namespace VaccinationManager.Models.Person
         [Required]
         public int PersonId { get; set; }
         public Person Person { get; set; }
+
+        //Pour les OneToMany
+        public IEnumerable<MedicalStaff> medicalStaffs { get; set; } 
     }
 }

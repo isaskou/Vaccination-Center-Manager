@@ -19,11 +19,21 @@ namespace VaccinationManager.Models.RendezVous
         [Column(TypeName = "Date")]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
-        
+
         [Required]
-        [Column(TypeName = "Time")]
-        [DataType(DataType.Time)]
-        public FifteenHour TimeFifteen { get; set; }
+        public int FifteenHourId { get; set; }
+
+        public FifteenHour FifteenHour { get; set; }
+
+        //[Required]
+        //[Column(TypeName = "Time")]
+        //[DataType(DataType.Time)]
+        //public FifteenHour StartTime { get; set; }
+        //[Required]
+        //[Column(TypeName = "Time")]
+        //[DataType(DataType.Time)]
+
+        //public FifteenHour EndTime { get; set; }
 
         [Required]
         public int PatientId { get; set; }
@@ -39,5 +49,8 @@ namespace VaccinationManager.Models.RendezVous
         public int CenterId { get; set; }
 
         public VaccinationCenter Center { get; set; }
+
+        //Pour la one to One
+        public Injection Injection { get; set; }
     }
 }

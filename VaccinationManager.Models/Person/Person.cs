@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VaccinationManager.Models.Person
@@ -37,5 +38,10 @@ namespace VaccinationManager.Models.Person
         [Required]
         [Column(TypeName = "CHAR(36)")]
         public string Salt { get; set; }
+
+
+        //Pour les OneToMany
+        public virtual IEnumerable<Staff> Staffs { get; set; } 
+        public virtual IEnumerable<Patient> Patients { get; set; }
     }
 }

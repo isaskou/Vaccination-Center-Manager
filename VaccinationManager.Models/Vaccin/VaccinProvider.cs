@@ -15,10 +15,14 @@ namespace VaccinationManager.Models.Vaccin
         [Required]
         [MinLength(1)]
         [MaxLength(64)]
-        public string Nom { get; set; }
+        public string Name { get; set; }
 
         [Required]
         public int AdressId { get; set; }
         public Adress Adress { get; set; }
+
+
+        //Pour la one to many
+        public IEnumerable<VaccinLot> VaccinLots { get; set; }
     }
 }
