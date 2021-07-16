@@ -11,7 +11,7 @@ namespace VaccinationManager.Models.Person
         [Required]
         [MinLength(11)]
         [MaxLength(11)]
-        public int InamiCode { get; set; }
+        public long InamiCode { get; set; }
 
         [Required]
         public int StaffId { get; set; }
