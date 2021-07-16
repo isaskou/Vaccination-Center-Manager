@@ -1,6 +1,6 @@
 # Laboratoire .Net 2021 : Gestionnaire de centre de vaccination ![](Aspose.Words.34d78b6a-71e6-497d-add4-6983d22d66e2.001.png)
 
-Suite à des soucis organisationnels, notre client : la région Wallonne ; nous demande de lui fournir une plateforme de gestion pour ces centres de vaccination. 
+Suite à des soucis organisationnels, notre client : ******* ; nous demande de lui fournir une plateforme de gestion pour ces centres de vaccination. 
 
 Cette plateforme est divisée en deux grandes parties : 
 
