@@ -17,12 +17,12 @@ namespace VaccinationManager.Models.Center
         public Day Day { get; set; }
 
         [Required]
-        [Column(TypeName = "TIME")]
+        //[Column(TypeName = "TIME")]
         [DataType(DataType.Time)]
         public DateTime OpenHour { get; set; }
 
         [Required]
-        [Column(TypeName = "TIME")]
+        //[Column(TypeName = "TIME")]
         [DataType(DataType.Time)]
         public DateTime CloseHour { get; set; }
         

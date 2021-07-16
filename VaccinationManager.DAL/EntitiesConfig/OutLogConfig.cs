@@ -19,7 +19,7 @@ namespace VaccinationManager.DAL.EntitiesConfig
             builder.Property(ol => ol.Id).ValueGeneratedOnAdd();
 
             builder.Property(ol => ol.OutDate)
-                .HasColumnType("DATETIME")
+                //.HasColumnType("DATETIME")
                 .IsRequired();
 
             builder.Property(ol => ol.Quantity)

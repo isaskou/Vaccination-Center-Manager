@@ -1,0 +1,12 @@
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Tools\bin\Debug\net5.0\VaccinationManager.Tools.deps.json
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Tools\bin\Debug\net5.0\VaccinationManager.Tools.dll
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Tools\bin\Debug\net5.0\ref\VaccinationManager.Tools.dll
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Tools\bin\Debug\net5.0\VaccinationManager.Tools.pdb
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Tools\obj\Debug\net5.0\VaccinationManager.Tools.csproj.AssemblyReference.cache
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Tools\obj\Debug\net5.0\VaccinationManager.Tools.GeneratedMSBuildEditorConfig.editorconfig
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Tools\obj\Debug\net5.0\VaccinationManager.Tools.AssemblyInfoInputs.cache
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Tools\obj\Debug\net5.0\VaccinationManager.Tools.AssemblyInfo.cs
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Tools\obj\Debug\net5.0\VaccinationManager.Tools.csproj.CoreCompileInputs.cache
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Tools\obj\Debug\net5.0\VaccinationManager.Tools.dll
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Tools\obj\Debug\net5.0\ref\VaccinationManager.Tools.dll
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Tools\obj\Debug\net5.0\VaccinationManager.Tools.pdb

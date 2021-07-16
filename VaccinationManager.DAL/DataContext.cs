@@ -49,14 +49,9 @@ namespace VaccinationManager.DAL
         public DbSet<OutLog> OutLogs { get; set; }
 
 
-        public DataContext(DbContextOptions<DataContext> options) : base(options)
-        {
-        }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(_cnstr);
-
         }
 
 

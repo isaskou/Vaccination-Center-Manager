@@ -19,11 +19,11 @@ namespace VaccinationManager.DAL.EntitiesConfig.Rendez_vous
             builder.Property(ft => ft.Id).ValueGeneratedOnAdd();
 
             builder.Property(ft => ft.StartTime)
-                .HasColumnType("TIME")
+                //.HasColumnType("TIME")
                 .IsRequired();
 
             builder.Property(ft => ft.EndTime)
-                .HasColumnType("TIME")
+                //.HasColumnType("TIME")
                 .IsRequired();
         }
     }

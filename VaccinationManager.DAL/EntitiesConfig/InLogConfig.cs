@@ -19,7 +19,7 @@ namespace VaccinationManager.DAL.EntitiesConfig
             builder.Property(il => il.Id).ValueGeneratedOnAdd();
 
             builder.Property(il => il.InDate)
-                .HasColumnType("DATETIME")
+                //.HasColumnType("DATETIME")
                 .IsRequired();
             builder.HasCheckConstraint("CK_InDate", "InDate>=GetDate()");
 

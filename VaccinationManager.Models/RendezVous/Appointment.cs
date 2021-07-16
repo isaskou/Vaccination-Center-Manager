@@ -16,7 +16,7 @@ namespace VaccinationManager.Models.RendezVous
         public int Id { get; set; }
 
         [Required]
-        [Column(TypeName = "Date")]
+        //[Column(TypeName = "Date")]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 

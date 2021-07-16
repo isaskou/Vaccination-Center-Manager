@@ -28,10 +28,10 @@ namespace VaccinationManager.DAL.EntitiesConfig
                 .HasForeignKey(i => i.MedicalStaffId)
                 .IsRequired();
 
-            builder.HasOne(i=>i.Appointment)
-                .WithOne(a=>a.Injection)
-                .HasForeignKey<Injection>(i=>i.AppointmentId)
-                .IsRequired()
+            builder.HasOne(i => i.Appointment)
+                .WithOne(a => a.Injection)
+                .HasForeignKey<Injection>(i => i.AppointmentId)
+                .IsRequired();
 
 
         }

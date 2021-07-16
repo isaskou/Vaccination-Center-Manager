@@ -23,11 +23,11 @@ namespace VaccinationManager.DAL.EntitiesConfig.Center
                 .IsRequired();
 
             builder.Property(sc => sc.OpenHour)
-                .HasColumnType("TIME")
+                //.HasColumnType("TIME")
                 .IsRequired();
 
             builder.Property(sc => sc.CloseHour)
-                .HasColumnType("TIME")
+                //.HasColumnType("TIME")
                 .IsRequired();
 
             builder.Property(sc => sc.CenterId)

@@ -14,12 +14,12 @@ namespace VaccinationManager.Models.RendezVous
 
         [Required]
         [DataType(DataType.Time)]
-        [Column(TypeName ="TIME")]
+        //[Column(TypeName ="TIME")]
         public DateTime StartTime { get; set; }
 
         [Required]
         [DataType(DataType.Time)]
-        [Column(TypeName = "TIME")]
+        //[Column(TypeName = "TIME")]
 
         public DateTime EndTime { get; set; }
 

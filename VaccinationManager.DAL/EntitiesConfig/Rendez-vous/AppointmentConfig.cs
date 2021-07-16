@@ -19,13 +19,13 @@ namespace VaccinationManager.DAL.EntitiesConfig.Rendez_vous
             builder.Property(a => a.Id).ValueGeneratedOnAdd();
 
             builder.Property(a => a.Date)
-                .HasColumnType("DATE")
+                //.HasColumnType("DATE")
                 .IsRequired();
             builder.HasCheckConstraint("CK_Date", "[Date]>= GETDATE()");
 
             builder.HasOne(a => a.FifteenHour)
                 .WithMany(fh=>fh.Appointments)
-                .HasForeignKey(a=>a.FifteenHourId)
+                .HasForeignKey(a=>a.FifteenHourId).OnDelete(DeleteBehavior.Restrict)
                 .IsRequired();
 
             builder.HasOne(a => a.Patient)
