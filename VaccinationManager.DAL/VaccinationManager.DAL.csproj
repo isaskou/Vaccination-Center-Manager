@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VaccinationManager.Models\VaccinationManager.Models.csproj" />
+    <ProjectReference Include="..\VaccinationManager.Tools\VaccinationManager.Tools.csproj" />
   </ItemGroup>
 
 </Project>

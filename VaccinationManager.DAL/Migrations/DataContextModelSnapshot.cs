@@ -52,6 +52,89 @@ namespace VaccinationManager.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Adress");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            City = "Court-Saint-Etienne",
+                            District = "BrabantWallon",
+                            Number = "2",
+                            PostalCode = 1490,
+                            Street = "Boucle Joseph Dewez"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            City = "Charleroi",
+                            District = "Hainaut",
+                            Number = "-",
+                            PostalCode = 6000,
+                            Street = "Esplanade du Conseil de l’Europe"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            City = "Mons",
+                            District = "Hainaut",
+                            Number = "2",
+                            PostalCode = 7000,
+                            Street = "Avenue Thomas Edison"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            City = "Ronquières",
+                            District = "Hainaut",
+                            Number = "1",
+                            PostalCode = 7090,
+                            Street = "Rue Rosemont"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            City = "Tournai",
+                            District = "Hainaut",
+                            Number = "2",
+                            PostalCode = 7500,
+                            Street = "Avenue de Gaulle"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            City = "Grâce-Hollogne",
+                            District = "Liège",
+                            Number = "1",
+                            PostalCode = 4460,
+                            Street = "Rue de l’Aéroport"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            City = "Pepinster",
+                            District = "Liège",
+                            Number = "1",
+                            PostalCode = 4860,
+                            Street = "Rue du Paire"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            City = "Marche-en-Famenne",
+                            District = "Luxembourg",
+                            Number = "1",
+                            PostalCode = 6900,
+                            Street = "Rue des Deux Provinces"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            City = "Namur",
+                            District = "Namur",
+                            Number = "2",
+                            PostalCode = 5000,
+                            Street = "Avenue Sergent Vrithoff"
+                        });
                 });
 
             modelBuilder.Entity("VaccinationManager.Models.Center.ScheduleCenter", b =>
@@ -108,6 +191,71 @@ namespace VaccinationManager.DAL.Migrations
                         .IsUnique();
 
                     b.ToTable("VaccinationCenter");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AdressId = 1,
+                            ManagerId = 1,
+                            Name = "PAMexpo"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AdressId = 2,
+                            ManagerId = 1,
+                            Name = "CEME"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AdressId = 3,
+                            ManagerId = 1,
+                            Name = "Lotto Mons Expo"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AdressId = 4,
+                            ManagerId = 1,
+                            Name = "Village Vaccination Ronquières"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AdressId = 5,
+                            ManagerId = 1,
+                            Name = "Hall Sportif de Tournai"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AdressId = 6,
+                            ManagerId = 1,
+                            Name = "Bierset - Liège Airport"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AdressId = 7,
+                            ManagerId = 1,
+                            Name = "Centre sportif de Pepinster"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AdressId = 8,
+                            ManagerId = 1,
+                            Name = "WEX"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AdressId = 9,
+                            ManagerId = 1,
+                            Name = "Namur Expo"
+                        });
                 });
 
             modelBuilder.Entity("VaccinationManager.Models.InLog", b =>
@@ -192,9 +340,9 @@ namespace VaccinationManager.DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("InamiCode")
+                    b.Property<long>("InamiCode")
                         .HasMaxLength(11)
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
                     b.Property<int>("StaffId")
                         .HasColumnType("int");
@@ -204,6 +352,14 @@ namespace VaccinationManager.DAL.Migrations
                     b.HasIndex("StaffId");
 
                     b.ToTable("MedicalStaff");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            InamiCode = 12345678910L,
+                            StaffId = 1
+                        });
                 });
 
             modelBuilder.Entity("VaccinationManager.Models.Person.Patient", b =>
@@ -284,6 +440,17 @@ namespace VaccinationManager.DAL.Migrations
                     b.ToTable("Person");
 
                     b.HasCheckConstraint("CK_Email", "Email LIKE '_%@_%'");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "isabel@mail.be",
+                            FirstName = "Isabel",
+                            LastName = "Skou",
+                            Password = new byte[] { 114, 219, 123, 71, 46, 232, 53, 126, 208, 57, 252, 39, 227, 251, 71, 180, 211, 203, 53, 51, 23, 133, 30, 46, 128, 47, 149, 21, 191, 186, 29, 240 },
+                            Salt = "ac0d2bd5-1316-4a7e-85e0-8e28848bf937"
+                        });
                 });
 
             modelBuilder.Entity("VaccinationManager.Models.Person.Staff", b =>
@@ -305,6 +472,14 @@ namespace VaccinationManager.DAL.Migrations
                     b.HasIndex("PersonId");
 
                     b.ToTable("Staff");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Grade = "Medecin",
+                            PersonId = 1
+                        });
                 });
 
             modelBuilder.Entity("VaccinationManager.Models.RendezVous.Appointment", b =>
@@ -554,7 +729,7 @@ namespace VaccinationManager.DAL.Migrations
                     b.HasOne("VaccinationManager.Models.RendezVous.FifteenHour", "FifteenHour")
                         .WithMany("Appointments")
                         .HasForeignKey("FifteenHourId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("VaccinationManager.Models.Person.Patient", "Patient")

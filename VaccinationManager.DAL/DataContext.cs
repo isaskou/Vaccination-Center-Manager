@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VaccinationManager.DAL.DataSet;
 using VaccinationManager.DAL.EntitiesConfig;
 using VaccinationManager.DAL.EntitiesConfig.Adresse;
 using VaccinationManager.DAL.EntitiesConfig.Center;
@@ -80,6 +81,14 @@ namespace VaccinationManager.DAL
             builder.ApplyConfiguration(new InjectionConfig());
             builder.ApplyConfiguration(new InLogConfig());
             builder.ApplyConfiguration(new OutLogConfig());
+
+            //DataSet
+            builder.ApplyConfiguration(new DSVaccinationCenter());
+            builder.ApplyConfiguration(new DSAdress());
+            builder.ApplyConfiguration(new DSMedicalStaff());
+            builder.ApplyConfiguration(new DSPerson());
+            builder.ApplyConfiguration(new DSStaff());
+
         }
     }
 }

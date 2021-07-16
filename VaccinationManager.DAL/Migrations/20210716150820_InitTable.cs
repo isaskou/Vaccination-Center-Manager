@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace VaccinationManager.DAL.Migrations
 {
-    public partial class InitTables : Migration
+    public partial class InitTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -161,7 +161,7 @@ namespace VaccinationManager.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    InamiCode = table.Column<int>(type: "int", maxLength: 11, nullable: false),
+                    InamiCode = table.Column<long>(type: "bigint", maxLength: 11, nullable: false),
                     StaffId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -361,6 +361,53 @@ namespace VaccinationManager.DAL.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Adress",
+                columns: new[] { "Id", "City", "District", "Number", "PostalCode", "Street" },
+                values: new object[,]
+                {
+                    { 1, "Court-Saint-Etienne", "BrabantWallon", "2", 1490, "Boucle Joseph Dewez" },
+                    { 2, "Charleroi", "Hainaut", "-", 6000, "Esplanade du Conseil de l’Europe" },
+                    { 3, "Mons", "Hainaut", "2", 7000, "Avenue Thomas Edison" },
+                    { 4, "Ronquières", "Hainaut", "1", 7090, "Rue Rosemont" },
+                    { 5, "Tournai", "Hainaut", "2", 7500, "Avenue de Gaulle" },
+                    { 6, "Grâce-Hollogne", "Liège", "1", 4460, "Rue de l’Aéroport" },
+                    { 7, "Pepinster", "Liège", "1", 4860, "Rue du Paire" },
+                    { 8, "Marche-en-Famenne", "Luxembourg", "1", 6900, "Rue des Deux Provinces" },
+                    { 9, "Namur", "Namur", "2", 5000, "Avenue Sergent Vrithoff" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Person",
+                columns: new[] { "Id", "Email", "FirstName", "LastName", "Password", "Salt", "Tel" },
+                values: new object[] { 1, "isabel@mail.be", "Isabel", "Skou", new byte[] { 114, 219, 123, 71, 46, 232, 53, 126, 208, 57, 252, 39, 227, 251, 71, 180, 211, 203, 53, 51, 23, 133, 30, 46, 128, 47, 149, 21, 191, 186, 29, 240 }, "ac0d2bd5-1316-4a7e-85e0-8e28848bf937", null });
+
+            migrationBuilder.InsertData(
+                table: "Staff",
+                columns: new[] { "Id", "Grade", "PersonId" },
+                values: new object[] { 1, "Medecin", 1 });
+
+            migrationBuilder.InsertData(
+                table: "MedicalStaff",
+                columns: new[] { "Id", "InamiCode", "StaffId" },
+                values: new object[] { 1, 12345678910L, 1 });
+
+            migrationBuilder.InsertData(
+                table: "VaccinationCenter",
+                columns: new[] { "Id", "AdressId", "ManagerId", "Name" },
+                values: new object[,]
+                {
+                    { 1, 1, 1, "PAMexpo" },
+                    { 2, 2, 1, "CEME" },
+                    { 3, 3, 1, "Lotto Mons Expo" },
+                    { 4, 4, 1, "Village Vaccination Ronquières" },
+                    { 5, 5, 1, "Hall Sportif de Tournai" },
+                    { 6, 6, 1, "Bierset - Liège Airport" },
+                    { 7, 7, 1, "Centre sportif de Pepinster" },
+                    { 8, 8, 1, "WEX" },
+                    { 9, 9, 1, "Namur Expo" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Appointment_CenterId",
                 table: "Appointment",
@@ -444,7 +491,7 @@ namespace VaccinationManager.DAL.Migrations
                 name: "IX_VaccinationCenter_ManagerId",
                 table: "VaccinationCenter",
                 column: "ManagerId",
-                unique: true);
+                unique: false);
 
             migrationBuilder.CreateIndex(
                 name: "IX_VaccinLot_CenterId",

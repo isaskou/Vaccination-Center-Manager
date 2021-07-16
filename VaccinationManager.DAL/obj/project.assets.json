@@ -1529,6 +1529,16 @@
         "runtime": {
           "bin/placeholder/VaccinationManager.Models.dll": {}
         }
+      },
+      "VaccinationManager.Tools/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/VaccinationManager.Tools.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VaccinationManager.Tools.dll": {}
+        }
       }
     }
   },
@@ -5802,6 +5812,11 @@
       "type": "project",
       "path": "../VaccinationManager.Models/VaccinationManager.Models.csproj",
       "msbuildProject": "../VaccinationManager.Models/VaccinationManager.Models.csproj"
+    },
+    "VaccinationManager.Tools/1.0.0": {
+      "type": "project",
+      "path": "../VaccinationManager.Tools/VaccinationManager.Tools.csproj",
+      "msbuildProject": "../VaccinationManager.Tools/VaccinationManager.Tools.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5809,7 +5824,8 @@
       "Microsoft.EntityFrameworkCore >= 5.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.8",
-      "VaccinationManager.Models >= 1.0.0"
+      "VaccinationManager.Models >= 1.0.0",
+      "VaccinationManager.Tools >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5846,6 +5862,9 @@
           "projectReferences": {
             "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\VaccinationManager.Models\\VaccinationManager.Models.csproj": {
               "projectPath": "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\VaccinationManager.Models\\VaccinationManager.Models.csproj"
+            },
+            "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\VaccinationManager.Tools\\VaccinationManager.Tools.csproj": {
+              "projectPath": "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\VaccinationManager.Tools\\VaccinationManager.Tools.csproj"
             }
           }
         }
