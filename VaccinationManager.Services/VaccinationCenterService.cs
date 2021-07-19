@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VaccinationManager.DAL;
+using VaccinationManager.Models.Adresse;
 using VaccinationManager.Models.Center;
+using VaccinationManager.Models.Person;
 using VaccinationManager.Services.Base;
 using VaccinationManager.Services.Interfaces;
 
@@ -16,29 +20,67 @@ namespace VaccinationManager.Services
         {
         }
 
-        public bool Delete(int id)
+        public VaccinationCenter Delete(int id)
         {
-            throw new NotImplementedException();
+            VaccinationCenter result = GetById(id);
+            if(result != null)
+            {
+                _dc.vaccinationCenters.Remove(result);
+                _dc.SaveChanges();
+            }
+            return result;
         }
 
         public IEnumerable<VaccinationCenter> GetAll()
         {
             return _dc.vaccinationCenters.ToList();
+
+
         }
+
+        public IEnumerable<VaccinationCenter> GetFullAll()
+        {
+            List<VaccinationCenter> centerList = _dc.vaccinationCenters
+                                                    .Include(cl => cl.Adress)
+                                                    .Include(cl => cl.Manager)
+                                                    
+                                                    .ToList();
+
+            return centerList;
+
+
+
+        }
+
 
         public VaccinationCenter GetById(int id)
         {
-            throw new NotImplementedException();
+                return _dc.vaccinationCenters
+                        .Include(a=>a.Adress)
+                        .Include(m=>m.Manager)
+                        .SingleOrDefault(vc => vc.Id == id);
         }
 
-        public void Insert(VaccinationCenter entity)
+        public VaccinationCenter Insert(VaccinationCenter entity)
         {
-            throw new NotImplementedException();
+            EntityEntry<VaccinationCenter> result = _dc.vaccinationCenters.Add(entity);
+            _dc.SaveChanges();
+            return result.Entity;
         }
 
-        public void Update(VaccinationCenter entity)
+        public VaccinationCenter Update(VaccinationCenter entity)
         {
-            throw new NotImplementedException();
+            VaccinationCenter result = GetById(entity.Id);
+
+            if(result != null)
+            {
+                result.Name = entity.Name;
+                result.AdressId = entity.AdressId;
+                result.ManagerId = entity.ManagerId;
+
+                _dc.SaveChanges();
+            }
+            return result;
         }
     }
 }

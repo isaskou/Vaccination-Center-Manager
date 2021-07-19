@@ -9,11 +9,11 @@ namespace VaccinationManager.Services.Interfaces
     public interface IService<T> 
         where T:class
     {
-        bool Delete(int id);
+        T Delete(int id);
         IEnumerable<T> GetAll();
         T GetById(int id);
-        void Insert(T entity);
-        void Update(T entity);
+        T Insert(T entity);
+        T Update(T entity);
 
     }
 }
