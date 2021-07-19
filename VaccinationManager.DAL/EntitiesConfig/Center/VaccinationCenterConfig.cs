@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VaccinationManager.Models.Adresse;
 using VaccinationManager.Models.Center;
 
 namespace VaccinationManager.DAL.EntitiesConfig.Center
@@ -22,7 +23,7 @@ namespace VaccinationManager.DAL.EntitiesConfig.Center
                 .HasMaxLength(64)
                 .IsRequired();
 
-            builder.HasOne(vc => vc.Adress)
+           builder.HasOne(vc => vc.Adress)
                 .WithOne(a => a.VaccinationCenter)
                 .HasForeignKey<VaccinationCenter>(vc=>vc.AdressId)
                 .IsRequired();

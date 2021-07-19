@@ -22,7 +22,9 @@ namespace VaccinationManager.DAL
 {
     public class DataContext : DbContext
     {
-        private readonly string _cnstr = @"server=LAPTOP-03RLPA2O;Database=VaccinationManager; Integrated Security=True;";
+        public DataContext (DbContextOptions options) : base(options)
+        {
+        }
 
 
         public DbSet<Adress> Adresses { get; set; }
@@ -48,16 +50,9 @@ namespace VaccinationManager.DAL
 
         public DbSet<InLog> InLogs { get; set; }
         public DbSet<OutLog> OutLogs { get; set; }
-
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(_cnstr);
-        }
-
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            
             builder.ApplyConfiguration(new AdressConfig());
 
             builder.ApplyConfiguration(new ScheduleCenterConfig());
