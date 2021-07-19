@@ -18,6 +18,7 @@ using Newtonsoft;
 using System.Text.Json.Serialization;
 using VaccinationManager.Services.Center;
 using VaccinationManager.Services.Adresse;
+using VaccinationManager.Services.Personnes;
 
 namespace VaccinationManager.Api
 {
@@ -42,6 +43,7 @@ namespace VaccinationManager.Api
             services.AddScoped<VaccinationCenterService>();
             services.AddScoped<ScheduleCenterService>();
             services.AddScoped<AdressService>();
+            services.AddScoped<PersonService>();
 
 
             services.AddSwaggerGen(c =>
