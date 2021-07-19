@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaccinationManager.DAL", "V
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaccinationManager.Tools", "VaccinationManager.Tools\VaccinationManager.Tools.csproj", "{416293AB-C7A5-44B3-9E18-86ECA528D0E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaccinationManager.Services", "VaccinationManager.Services\VaccinationManager.Services.csproj", "{3C173E2B-447F-4801-BFB2-C827872A90EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaccinationManager.Services", "VaccinationManager.Services\VaccinationManager.Services.csproj", "{3C173E2B-447F-4801-BFB2-C827872A90EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaccinationManager.Api", "VaccinationManager.Api\VaccinationManager.Api.csproj", "{2598497B-346E-4679-8ED3-AE998BD7CE31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3C173E2B-447F-4801-BFB2-C827872A90EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C173E2B-447F-4801-BFB2-C827872A90EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C173E2B-447F-4801-BFB2-C827872A90EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2598497B-346E-4679-8ED3-AE998BD7CE31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2598497B-346E-4679-8ED3-AE998BD7CE31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2598497B-346E-4679-8ED3-AE998BD7CE31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2598497B-346E-4679-8ED3-AE998BD7CE31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
