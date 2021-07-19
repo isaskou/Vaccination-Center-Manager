@@ -10,6 +10,7 @@ namespace VaccinationManager.Models.Center
 {
     public class ScheduleCenter
     {
+      
         public int Id { get; set; }
         
         [Required]
@@ -17,14 +18,15 @@ namespace VaccinationManager.Models.Center
         public Day Day { get; set; }
 
         [Required]
-        //[Column(TypeName = "TIME")]
         [DataType(DataType.Time)]
-        public DateTime OpenHour { get; set; }
+        //test [DisplayFormat(DataFormatString = "HH:mm:ss")]
+        public string OpenHour { get; set;  }
 
         [Required]
         //[Column(TypeName = "TIME")]
         [DataType(DataType.Time)]
-        public DateTime CloseHour { get; set; }
+        //[DisplayFormat(DataFormatString = "HH:mm:ss")]
+        public string CloseHour { get; set; }
         
         [Required]
         public int CenterId { get; set; }

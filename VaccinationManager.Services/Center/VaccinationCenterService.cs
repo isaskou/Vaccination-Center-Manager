@@ -12,7 +12,7 @@ using VaccinationManager.Models.Person;
 using VaccinationManager.Services.Base;
 using VaccinationManager.Services.Interfaces;
 
-namespace VaccinationManager.Services
+namespace VaccinationManager.Services.Center
 {
     public class VaccinationCenterService : BaseService, IService<VaccinationCenter>
     {

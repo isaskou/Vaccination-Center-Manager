@@ -20,8 +20,6 @@ namespace VaccinationManager.Models.Adresse
         public string Number { get; set; }
 
         [Required]
-        [MinLength(4)]
-        [MaxLength(4)]
         public int PostalCode { get; set; }
         
         [Required]

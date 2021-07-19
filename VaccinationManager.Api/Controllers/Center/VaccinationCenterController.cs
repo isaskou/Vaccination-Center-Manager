@@ -7,12 +7,13 @@ using VaccinationManager.Models.Center;
 using VaccinationManager.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
+using VaccinationManager.Services.Center;
 
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace VaccinationManager.Api.Controllers
+namespace VaccinationManager.Api.Controllers.Center
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -72,10 +73,14 @@ namespace VaccinationManager.Api.Controllers
                 if (result is null) return NotFound();
                 return Ok(result);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                return StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    Method = "GetById",
+                    Message = ex.Message
+                });
             }
         }
 

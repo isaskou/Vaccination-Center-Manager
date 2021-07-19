@@ -17,7 +17,7 @@ namespace VaccinationManager.Models.Person
         [Required]
         [MinLength(11)]
         [MaxLength(11)]
-        public char NationalRegister { get; set; }
+        public string NationalRegister { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
