@@ -104,7 +104,7 @@ namespace VaccinationManager.DAL.Migrations
                         column: x => x.AdressId,
                         principalTable: "Adress",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -127,13 +127,13 @@ namespace VaccinationManager.DAL.Migrations
                         column: x => x.AdressId,
                         principalTable: "Adress",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Patient_Person_PersonId",
                         column: x => x.PersonId,
                         principalTable: "Person",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -153,7 +153,7 @@ namespace VaccinationManager.DAL.Migrations
                         column: x => x.PersonId,
                         principalTable: "Person",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -173,7 +173,7 @@ namespace VaccinationManager.DAL.Migrations
                         column: x => x.StaffId,
                         principalTable: "Staff",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -194,13 +194,13 @@ namespace VaccinationManager.DAL.Migrations
                         column: x => x.AdressId,
                         principalTable: "Adress",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_VaccinationCenter_MedicalStaff_ManagerId",
                         column: x => x.ManagerId,
                         principalTable: "MedicalStaff",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -224,25 +224,25 @@ namespace VaccinationManager.DAL.Migrations
                         column: x => x.FifteenHourId,
                         principalTable: "FifteenHour",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Appointment_Patient_PatientId",
                         column: x => x.PatientId,
                         principalTable: "Patient",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Appointment_VaccinationCenter_CenterId",
                         column: x => x.CenterId,
                         principalTable: "VaccinationCenter",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Appointment_VaccinType_VaccinTypeId",
                         column: x => x.VaccinTypeId,
                         principalTable: "VaccinType",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -264,7 +264,7 @@ namespace VaccinationManager.DAL.Migrations
                         column: x => x.CenterId,
                         principalTable: "VaccinationCenter",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -286,25 +286,25 @@ namespace VaccinationManager.DAL.Migrations
                         column: x => x.InLogId,
                         principalTable: "InLog",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_VaccinLot_VaccinationCenter_CenterId",
                         column: x => x.CenterId,
                         principalTable: "VaccinationCenter",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_VaccinLot_VaccinProvider_ProviderId",
                         column: x => x.ProviderId,
                         principalTable: "VaccinProvider",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_VaccinLot_VaccinType_VaccinTypeId",
                         column: x => x.VaccinTypeId,
                         principalTable: "VaccinType",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -325,19 +325,19 @@ namespace VaccinationManager.DAL.Migrations
                         column: x => x.AppointmentId,
                         principalTable: "Appointment",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Injection_MedicalStaff_MedicalStaffId",
                         column: x => x.MedicalStaffId,
                         principalTable: "MedicalStaff",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Injection_VaccinLot_VaccinLotId",
                         column: x => x.VaccinLotId,
                         principalTable: "VaccinLot",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -359,7 +359,7 @@ namespace VaccinationManager.DAL.Migrations
                         column: x => x.VaccinLotId,
                         principalTable: "VaccinLot",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.InsertData(
