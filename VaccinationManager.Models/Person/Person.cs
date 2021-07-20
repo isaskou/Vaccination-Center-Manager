@@ -28,17 +28,10 @@ namespace VaccinationManager.Models.Person
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required]
-        [Column(TypeName = "VARBINARY(32)")]
-        [DataType(DataType.Password)]
+        public string Token { get; set; }
+
         public byte[] Password { get; set; }
-
-// mettre un Repassword ? ou un PasswordIn/PasswordOut ?
-
-        [Required]
-        [Column(TypeName = "CHAR(36)")]
         public string Salt { get; set; }
-
 
         //Pour les OneToMany
         public virtual IEnumerable<Staff> Staffs { get; set; } 
