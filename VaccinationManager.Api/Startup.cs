@@ -44,6 +44,9 @@ namespace VaccinationManager.Api
             services.AddScoped<ScheduleCenterService>();
             services.AddScoped<AdressService>();
             services.AddScoped<PersonService>();
+            services.AddScoped<StaffService>();
+            services.AddScoped<MedicalStaffService>();
+            services.AddScoped<PatientService>();
 
 
             services.AddSwaggerGen(c =>
