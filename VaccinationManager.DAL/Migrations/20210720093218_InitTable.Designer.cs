@@ -10,7 +10,7 @@ using VaccinationManager.DAL;
 namespace VaccinationManager.DAL.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210716150820_InitTable")]
+    [Migration("20210720093218_InitTable")]
     partial class InitTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -149,15 +149,17 @@ namespace VaccinationManager.DAL.Migrations
                     b.Property<int>("CenterId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CloseHour")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("CloseHour")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Day")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("OpenHour")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("OpenHour")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -423,16 +425,17 @@ namespace VaccinationManager.DAL.Migrations
                         .HasColumnType("nvarchar(64)");
 
                     b.Property<byte[]>("Password")
-                        .IsRequired()
-                        .HasColumnType("VARBINARY(32)");
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Salt")
-                        .IsRequired()
-                        .HasColumnType("CHAR(36)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Tel")
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -450,8 +453,8 @@ namespace VaccinationManager.DAL.Migrations
                             Email = "isabel@mail.be",
                             FirstName = "Isabel",
                             LastName = "Skou",
-                            Password = new byte[] { 114, 219, 123, 71, 46, 232, 53, 126, 208, 57, 252, 39, 227, 251, 71, 180, 211, 203, 53, 51, 23, 133, 30, 46, 128, 47, 149, 21, 191, 186, 29, 240 },
-                            Salt = "ac0d2bd5-1316-4a7e-85e0-8e28848bf937"
+                            Password = new byte[] { 117, 61, 244, 33, 161, 231, 106, 51, 233, 11, 73, 241, 222, 142, 186, 83, 41, 187, 245, 220, 10, 9, 13, 40, 195, 148, 114, 27, 99, 64, 55, 129 },
+                            Salt = "1f9fb3a4-4137-48c7-b5e1-faa2fda7c289"
                         });
                 });
 

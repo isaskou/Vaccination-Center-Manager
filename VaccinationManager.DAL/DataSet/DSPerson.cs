@@ -10,6 +10,7 @@ using VaccinationManager.Tools;
 
 namespace VaccinationManager.DAL.DataSet
 {
+
     public class DSPerson : IEntityTypeConfiguration<Person>
     {
         public void Configure(EntityTypeBuilder<Person> builder)

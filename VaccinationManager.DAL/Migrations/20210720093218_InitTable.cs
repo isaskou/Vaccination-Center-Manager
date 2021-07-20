@@ -64,8 +64,9 @@ namespace VaccinationManager.DAL.Migrations
                     LastName = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     Tel = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
                     Email = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: false),
-                    Password = table.Column<byte[]>(type: "VARBINARY(32)", nullable: false),
-                    Salt = table.Column<string>(type: "CHAR(36)", nullable: false)
+                    Token = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    Salt = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -251,8 +252,8 @@ namespace VaccinationManager.DAL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Day = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    OpenHour = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CloseHour = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    OpenHour = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CloseHour = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CenterId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -379,8 +380,8 @@ namespace VaccinationManager.DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "Person",
-                columns: new[] { "Id", "Email", "FirstName", "LastName", "Password", "Salt", "Tel" },
-                values: new object[] { 1, "isabel@mail.be", "Isabel", "Skou", new byte[] { 114, 219, 123, 71, 46, 232, 53, 126, 208, 57, 252, 39, 227, 251, 71, 180, 211, 203, 53, 51, 23, 133, 30, 46, 128, 47, 149, 21, 191, 186, 29, 240 }, "ac0d2bd5-1316-4a7e-85e0-8e28848bf937", null });
+                columns: new[] { "Id", "Email", "FirstName", "LastName", "Password", "Salt", "Tel", "Token" },
+                values: new object[] { 1, "isabel@mail.be", "Isabel", "Skou", new byte[] { 117, 61, 244, 33, 161, 231, 106, 51, 233, 11, 73, 241, 222, 142, 186, 83, 41, 187, 245, 220, 10, 9, 13, 40, 195, 148, 114, 27, 99, 64, 55, 129 }, "1f9fb3a4-4137-48c7-b5e1-faa2fda7c289", null, null });
 
             migrationBuilder.InsertData(
                 table: "Staff",

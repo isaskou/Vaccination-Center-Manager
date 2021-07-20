@@ -38,12 +38,10 @@ namespace VaccinationManager.DAL.EntitiesConfig.Personne
                 .HasIndex(p => p.Email)
                 .IsUnique();
 
-            builder.Property(p => p.Password)
-                .IsRequired();
+            builder.Property(p => p.Token);
 
-            builder.Property(p => p.Salt)
-                .IsRequired();
-
+            builder.Property(p => p.Password);
+            builder.Property(p => p.Salt);
 
         }
     }
