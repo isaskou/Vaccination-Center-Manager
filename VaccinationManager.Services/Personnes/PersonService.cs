@@ -8,13 +8,37 @@ using VaccinationManager.DAL;
 using VaccinationManager.Models.Person;
 using VaccinationManager.Services.Base;
 using VaccinationManager.Services.Interfaces;
+using VaccinationManager.Tools;
 
 namespace VaccinationManager.Services.Personnes
 {
     public class PersonService : BaseService, IService<Person>
     {
+        private Func<Person, Person> mapping =
+            (pro) =>
+            {
+                if (pro is null) return null;
+                return new Person
+                {
+                    Id = pro.Id,
+                    FirstName = pro.FirstName,
+                    LastName = pro.LastName,
+                    Email = pro.Email,
+                    Tel = pro.Tel,
+                    Token = null,
+                };
+            };
         public PersonService(DataContext dc) : base(dc)
         {
+        }
+
+        public Person Check(string mail, string password)
+        {
+            Person profile = _dc.People.Where(p => p.Email == mail).SingleOrDefault();
+            if (profile == null) return null;
+            byte[] possiblePassword = PasswordHasher.Hashing(profile, password, pa => pa.Salt);
+            //if (possiblePassword.SequenceEqual(profile.Password)) return mapping(profile);
+            return null;
         }
 
         public Person Delete(int id)
@@ -30,12 +54,12 @@ namespace VaccinationManager.Services.Personnes
 
         public IEnumerable<Person> GetAll()
         {
-            return _dc.People.ToList();
+            return _dc.People.Select(p=>mapping(p)).ToList();
         }
 
         public Person GetById(int id)
         {
-            return _dc.People.SingleOrDefault(p=>p.Id == id);
+            return mapping(_dc.People.SingleOrDefault(p=>p.Id == id));
         }
 
         public Person Insert(Person entity)
@@ -56,8 +80,7 @@ namespace VaccinationManager.Services.Personnes
                 result.LastName = entity.LastName;
                 result.Tel = entity.Tel;
                 result.Email = entity.Email;
-                result.Password = entity.Password;
-
+                result.Token = entity.Token;
                 _dc.SaveChanges();
             }
             return result;
