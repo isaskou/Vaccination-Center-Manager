@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaccinationManager.Tools", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaccinationManager.Services", "VaccinationManager.Services\VaccinationManager.Services.csproj", "{3C173E2B-447F-4801-BFB2-C827872A90EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaccinationManager.Api", "VaccinationManager.Api\VaccinationManager.Api.csproj", "{2598497B-346E-4679-8ED3-AE998BD7CE31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaccinationManager.Api", "VaccinationManager.Api\VaccinationManager.Api.csproj", "{2598497B-346E-4679-8ED3-AE998BD7CE31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
