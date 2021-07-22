@@ -29,5 +29,6 @@ namespace VaccinationManager.Models.RendezVous
         //public DateTime time { get; set; }
 
         public IEnumerable<Appointment> Appointments { get; set; }
+
     }
 }

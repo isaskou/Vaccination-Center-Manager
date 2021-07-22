@@ -49,6 +49,7 @@ namespace VaccinationManager.Models.RendezVous
         public int CenterId { get; set; }
 
         public VaccinationCenter Center { get; set; }
+        public int InjectionId { get; set; }
 
         //Pour la one to One
         public Injection Injection { get; set; }
