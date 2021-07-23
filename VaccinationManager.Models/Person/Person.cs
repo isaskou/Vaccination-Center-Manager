@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
+using VaccinationManager.Tools;
+using VaccinationManager.Tools.SecurityTools;
 
 namespace VaccinationManager.Models.Person
 {
@@ -30,7 +33,19 @@ namespace VaccinationManager.Models.Person
 
         public string Token { get; set; }
 
-        public byte[] Password { get; set; }
+        [Required]
+        [JsonIgnore]
+        [DataType(DataType.Password)]
+        public byte[] PasswordOut
+        {
+            get
+            {
+                return PasswordHasher.HashMe(PasswordIn);
+            }
+        }
+
+        public string PasswordIn { get; set; }
+
         public string Salt { get; set; }
 
         //Pour les OneToMany

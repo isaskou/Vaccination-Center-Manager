@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "VaccinationManager.Tools/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/VaccinationManager.Tools.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VaccinationManager.Tools.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "VaccinationManager.Tools/1.0.0": {
+      "type": "project",
+      "path": "../VaccinationManager.Tools/VaccinationManager.Tools.csproj",
+      "msbuildProject": "../VaccinationManager.Tools/VaccinationManager.Tools.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "VaccinationManager.Tools >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\isabe\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\VaccinationManager.Tools\\VaccinationManager.Tools.csproj": {
+              "projectPath": "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\VaccinationManager.Tools\\VaccinationManager.Tools.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
