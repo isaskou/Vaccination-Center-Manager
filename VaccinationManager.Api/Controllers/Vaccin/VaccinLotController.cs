@@ -130,6 +130,7 @@ namespace VaccinationManager.Api.Controllers.Vaccin
                     Message = ex.Message
                 });
             }
+
         }
     }
 }
