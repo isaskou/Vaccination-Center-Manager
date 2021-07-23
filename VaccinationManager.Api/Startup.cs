@@ -12,7 +12,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VaccinationManager.DAL;
-using VaccinationManager.Models.Center;
 using VaccinationManager.Services;
 using Newtonsoft;
 using System.Text.Json.Serialization;
@@ -21,6 +20,7 @@ using VaccinationManager.Services.Adresse;
 using VaccinationManager.Services.Personnes;
 using VaccinationManager.Services.Rendez_vous;
 using VaccinationManager.Services.Vaccin;
+using VaccinationManager.Models.Vaccin;
 
 namespace VaccinationManager.Api
 {
@@ -60,6 +60,7 @@ services.AddScoped<VaccinationCenterService>();
 
             //Vaccin
             services.AddScoped<VaccinLotService>();
+            services.AddScoped<VaccinProviderService>();
 
             services.AddSwaggerGen(c =>
             {
