@@ -51,6 +51,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
@@ -190,7 +194,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\VaccinationManager.Tools\\VaccinationManager.Tools.csproj": {
+                "projectPath": "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\VaccinationManager.Tools\\VaccinationManager.Tools.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

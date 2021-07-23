@@ -21,6 +21,9 @@ using VaccinationManager.Services.Personnes;
 using VaccinationManager.Services.Rendez_vous;
 using VaccinationManager.Services.Vaccin;
 using VaccinationManager.Models.Vaccin;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace VaccinationManager.Api
 {
@@ -43,8 +46,8 @@ namespace VaccinationManager.Api
 
             //Add services
 
-//Center            
-services.AddScoped<VaccinationCenterService>();
+            //Center            
+            services.AddScoped<VaccinationCenterService>();
             services.AddScoped<ScheduleCenterService>();
             //Adresse
             services.AddScoped<AdressService>();
@@ -72,6 +75,36 @@ services.AddScoped<VaccinationCenterService>();
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VaccinationManager.Api", Version = "v1" });
             });
+
+            //JWT
+            IConfigurationSection jwtSection = Configuration.GetSection("JWTSettings");
+            services.Configure<JWTSettings>(jwtSection);
+            var appSettings = jwtSection.Get<JWTSettings>();
+            var key = Encoding.ASCII.GetBytes(appSettings.SecretKey);
+
+            //Authentication
+            services
+                .AddAuthentication(
+                a =>
+                {
+                    a.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    a.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                }
+                )
+                .AddJwtBearer(
+                b =>
+                {
+                    b.RequireHttpsMetadata = true;
+                    b.SaveToken = true;
+                    b.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(key),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                }
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -85,6 +118,8 @@ services.AddScoped<VaccinationCenterService>();
             }
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
