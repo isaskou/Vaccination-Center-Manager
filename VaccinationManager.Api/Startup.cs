@@ -65,6 +65,7 @@ services.AddScoped<VaccinationCenterService>();
 
             //Divers
             services.AddScoped<InjectionService>();
+            services.AddScoped<InLogService>();
 
             services.AddSwaggerGen(c =>
             {
