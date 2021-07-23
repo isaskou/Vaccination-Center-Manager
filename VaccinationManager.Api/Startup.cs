@@ -63,6 +63,9 @@ services.AddScoped<VaccinationCenterService>();
             services.AddScoped<VaccinProviderService>();
             services.AddScoped<VaccinTypeService>();
 
+            //Divers
+            services.AddScoped<InjectionService>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VaccinationManager.Api", Version = "v1" });
