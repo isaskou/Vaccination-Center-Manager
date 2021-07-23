@@ -19,6 +19,8 @@ using System.Text.Json.Serialization;
 using VaccinationManager.Services.Center;
 using VaccinationManager.Services.Adresse;
 using VaccinationManager.Services.Personnes;
+using VaccinationManager.Services.Rendez_vous;
+using VaccinationManager.Services.Vaccin;
 
 namespace VaccinationManager.Api
 {
@@ -40,14 +42,24 @@ namespace VaccinationManager.Api
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
             //Add services
-            services.AddScoped<VaccinationCenterService>();
+
+//Center            
+services.AddScoped<VaccinationCenterService>();
             services.AddScoped<ScheduleCenterService>();
+            //Adresse
             services.AddScoped<AdressService>();
+
+            //Personnes
             services.AddScoped<PersonService>();
             services.AddScoped<StaffService>();
             services.AddScoped<MedicalStaffService>();
             services.AddScoped<PatientService>();
 
+            //Rendez-vous
+            services.AddScoped<AppointmentService>();
+
+            //Vaccin
+            services.AddScoped<VaccinLotService>();
 
             services.AddSwaggerGen(c =>
             {
