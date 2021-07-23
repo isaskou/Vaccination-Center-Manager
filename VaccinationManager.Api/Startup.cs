@@ -61,6 +61,7 @@ services.AddScoped<VaccinationCenterService>();
             //Vaccin
             services.AddScoped<VaccinLotService>();
             services.AddScoped<VaccinProviderService>();
+            services.AddScoped<VaccinTypeService>();
 
             services.AddSwaggerGen(c =>
             {
