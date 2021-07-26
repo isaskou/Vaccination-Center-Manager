@@ -65,6 +65,9 @@ namespace VaccinationManager.DAL
         public DbSet<InLog> InLogs { get; set; }
         public DbSet<OutLog> OutLogs { get; set; }
 
+        //Models ASP
+        //public DbSet<CenterModel>
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(_cnstr);
