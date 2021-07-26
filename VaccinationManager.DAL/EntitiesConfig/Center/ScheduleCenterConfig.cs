@@ -36,6 +36,7 @@ namespace VaccinationManager.DAL.EntitiesConfig.Center
             builder.HasOne(sc => sc.Center)
                 .WithMany(vc => vc.ScheduleCenters)
                 .HasForeignKey(sc => sc.CenterId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
             
 

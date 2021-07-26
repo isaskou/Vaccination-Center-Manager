@@ -25,6 +25,7 @@ namespace VaccinationManager.DAL.EntitiesConfig.Vaccin
             builder.HasOne(vp => vp.Adress)
                 .WithOne(a => a.VaccinProvider)
                 .HasForeignKey<VaccinProvider>(vp => vp.AdressId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
         }
     }

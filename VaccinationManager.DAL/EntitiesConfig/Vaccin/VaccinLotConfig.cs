@@ -21,21 +21,25 @@ namespace VaccinationManager.DAL.EntitiesConfig.Vaccin
             builder.HasOne(vl => vl.VaccinType)
                 .WithMany(vt => vt.VaccinLots)
                 .HasForeignKey(vl => vl.VaccinTypeId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
 
             builder.HasOne(vl => vl.VaccinProvider)
                 .WithMany(vp => vp.VaccinLots)
                 .HasForeignKey(vl => vl.ProviderId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
 
             builder.HasOne(vl => vl.InLog)
                 .WithMany(il => il.VaccinLots)
                 .HasForeignKey(vl => vl.InLogId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
 
             builder.HasOne(vl => vl.VaccinationCenter)
                 .WithMany(vc => vc.VaccinLots)
                 .HasForeignKey(vl => vl.CenterId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
         }
     }

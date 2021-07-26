@@ -29,6 +29,7 @@ namespace VaccinationManager.DAL.EntitiesConfig
             builder.HasOne(ol => ol.VaccinLot)
                 .WithMany(vl => vl.OutLogs)
                 .HasForeignKey(ol => ol.VaccinLotId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
         }
     }

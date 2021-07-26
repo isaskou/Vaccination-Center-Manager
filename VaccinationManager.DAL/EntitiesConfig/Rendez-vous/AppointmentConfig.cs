@@ -25,22 +25,26 @@ namespace VaccinationManager.DAL.EntitiesConfig.Rendez_vous
 
             builder.HasOne(a => a.FifteenHour)
                 .WithMany(fh=>fh.Appointments)
-                .HasForeignKey(a=>a.FifteenHourId).OnDelete(DeleteBehavior.Restrict)
+                .HasForeignKey(a=>a.FifteenHourId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
 
             builder.HasOne(a => a.Patient)
                 .WithMany(p => p.Appointments)
                 .HasForeignKey(a => a.PatientId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
 
             builder.HasOne(a => a.VaccinType)
                 .WithMany(vt => vt.Appointments)
                 .HasForeignKey(a => a.VaccinTypeId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
 
             builder.HasOne(a => a.Center)
                 .WithMany(c=>c.Appointments)
                 .HasForeignKey(a=>a.CenterId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
         }
     }

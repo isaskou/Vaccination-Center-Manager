@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VaccinationManager.Models.Person;
 using VaccinationManager.Tools;
+using VaccinationManager.Tools.SecurityTools;
 
 namespace VaccinationManager.DAL.DataSet
 {

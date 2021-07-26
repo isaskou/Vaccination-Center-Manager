@@ -21,16 +21,19 @@ namespace VaccinationManager.DAL.EntitiesConfig
             builder.HasOne(i => i.VaccinLot)
                 .WithMany(vl => vl.Injections)
                 .HasForeignKey(i => i.VaccinLotId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
 
             builder.HasOne(i => i.MedicalStaff)
                 .WithMany(ms => ms.Injections)
                 .HasForeignKey(i => i.MedicalStaffId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
 
             builder.HasOne(i => i.Appointment)
                 .WithOne(a => a.Injection)
                 .HasForeignKey<Injection>(i => i.AppointmentId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
 
 

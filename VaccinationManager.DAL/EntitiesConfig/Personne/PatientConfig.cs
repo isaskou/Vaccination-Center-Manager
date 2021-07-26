@@ -35,6 +35,7 @@ namespace VaccinationManager.DAL.EntitiesConfig.Personne
             builder.HasOne(pa => pa.Person)
                 .WithMany(pe => pe.Patients)
                 .HasForeignKey(pa => pa.PersonId)
+                .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
 
         }
