@@ -9,6 +9,7 @@ using VaccinationManager.Models.Person;
 using VaccinationManager.Services.Base;
 using VaccinationManager.Services.Interfaces;
 using VaccinationManager.Tools;
+using VaccinationManager.Tools.SecurityTools;
 
 namespace VaccinationManager.Services.Personnes
 {
@@ -37,7 +38,7 @@ namespace VaccinationManager.Services.Personnes
             Person profile = _dc.People.Where(p => p.Email == mail).SingleOrDefault();
             if (profile == null) return null;
             byte[] possiblePassword = PasswordHasher.Hashing(profile, password, pa => pa.Salt);
-            //if (possiblePassword.SequenceEqual(profile.Password)) return mapping(profile);
+            if (possiblePassword.SequenceEqual(profile.Password)) return mapping(profile);
             return null;
         }
 
