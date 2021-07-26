@@ -9,15 +9,15 @@ namespace VaccinationManager.Tools.SecurityTools
 {
     public static class PasswordHasher
     {
-        public static byte[] HashMe(string passwordIn)
+        public static byte[] Hashing<T>(T userModel, string password, Func<T, string> saltSelector)
         {
-            byte[] data = Encoding.UTF8.GetBytes(passwordIn);
-            byte[] result;
+            string salt = saltSelector(userModel);
+            string result = salt.Substring(0, salt.Length / 2) + password + salt.Substring(salt.Length / 2);
 
-            SHA512 shaM = new SHA512Managed();
-
-            result = shaM.ComputeHash(data);
-            return result;
-                }
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                return sha256.ComputeHash(Encoding.UTF8.GetBytes(result));
+            }
+        }
     }
 }
