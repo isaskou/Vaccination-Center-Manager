@@ -36,15 +36,8 @@ namespace VaccinationManager.Models.Person
         [Required]
         [JsonIgnore]
         [DataType(DataType.Password)]
-        public byte[] PasswordOut
-        {
-            get
-            {
-                return PasswordHasher.HashMe(PasswordIn);
-            }
-        }
+        public byte[] Password { get; set; }
 
-        public string PasswordIn { get; set; }
 
         public string Salt { get; set; }
 

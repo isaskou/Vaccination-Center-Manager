@@ -10,3 +10,6 @@ D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Model
 D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Models\obj\Debug\net5.0\VaccinationManager.Models.dll
 D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Models\obj\Debug\net5.0\ref\VaccinationManager.Models.dll
 D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Models\obj\Debug\net5.0\VaccinationManager.Models.pdb
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Models\bin\Debug\net5.0\VaccinationManager.Tools.dll
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Models\bin\Debug\net5.0\VaccinationManager.Tools.pdb
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Models\obj\Debug\net5.0\VaccinationManager.Models.csproj.CopyComplete

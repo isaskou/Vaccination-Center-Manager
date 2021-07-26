@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "+jTlRKzUska2rnxWEHFIb+XPoLyMlBQu4ALGwmTVaMtULTIrglA+ab56AYODK3pNE2bs56cc44OzBnAqcaE07Q==",
+  "dgSpecHash": "nXp/fBHFtUoyQcPWg0InFeswlt87ST8buyDyZdYeCb6hi8+fbWcSsLIfwsudnWwFA4uytTHp36UvmZxqUreYxw==",
   "success": true,
   "projectFilePath": "D:\\TFTic\\NET_BI_SHAREPOINT\\Labo .NET\\VaccinationManager\\VaccinationManager.Models\\VaccinationManager.Models.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\isabe\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\isabe\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.8\\microsoft.aspnetcore.http.features.5.0.8.nupkg.sha512",
+    "C:\\Users\\isabe\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\isabe\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
+    "C:\\Users\\isabe\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
