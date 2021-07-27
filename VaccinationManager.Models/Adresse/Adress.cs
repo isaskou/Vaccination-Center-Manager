@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using VaccinationManager.Models.Center;
-using VaccinationManager.Models.Person;
+using VaccinationManager.Models.Personne;
 using VaccinationManager.Models.Vaccin;
 
 namespace VaccinationManager.Models.Adresse
@@ -37,6 +37,6 @@ namespace VaccinationManager.Models.Adresse
         public virtual Patient Patient
         { get; set; }
 
-        public virtual VaccinProvider VaccinProvider { get; set; } 
-        }
+        public virtual VaccinProvider VaccinProvider { get; set; }
+    }
 }

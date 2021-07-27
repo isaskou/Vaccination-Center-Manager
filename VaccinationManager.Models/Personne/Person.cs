@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 using VaccinationManager.Tools;
 using VaccinationManager.Tools.SecurityTools;
 
-namespace VaccinationManager.Models.Person
+namespace VaccinationManager.Models.Personne
 {
     public class Person
     {

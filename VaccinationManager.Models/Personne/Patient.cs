@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using VaccinationManager.Models.Adresse;
 using VaccinationManager.Models.RendezVous;
 
-namespace VaccinationManager.Models.Person
+namespace VaccinationManager.Models.Personne
 {
     public class Patient
     {

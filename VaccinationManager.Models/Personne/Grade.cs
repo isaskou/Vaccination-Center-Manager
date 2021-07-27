@@ -1,4 +1,4 @@
-﻿namespace VaccinationManager.Models.Person
+﻿namespace VaccinationManager.Models.Personne
 {
     public enum Grade
     {

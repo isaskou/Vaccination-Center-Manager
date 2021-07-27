@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VaccinationManager.Models.Person;
+using VaccinationManager.Models.Personne;
 using VaccinationManager.Models.RendezVous;
 using VaccinationManager.Models.Vaccin;
 

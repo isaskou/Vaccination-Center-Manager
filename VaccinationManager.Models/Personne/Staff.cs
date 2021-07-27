@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using VaccinationManager.Models.Center;
 
-namespace VaccinationManager.Models.Person
+namespace VaccinationManager.Models.Personne
 {
     public class Staff
     {
@@ -15,7 +16,11 @@ namespace VaccinationManager.Models.Person
         public int PersonId { get; set; }
         public Person Person { get; set; }
 
-        //Pour les OneToMany
-        public IEnumerable<MedicalStaff> medicalStaffs { get; set; } 
+        public int VaccinationCenterId { get; set; }
+        public VaccinationCenter VaccinationCenter { get; set; }
+
+        //Pour les OneToOne
+        public MedicalStaff MedicalStaff { get; set; } 
+        
     }
 }

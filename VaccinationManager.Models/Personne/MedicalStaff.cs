@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using VaccinationManager.Models.Center;
 
-namespace VaccinationManager.Models.Person
+namespace VaccinationManager.Models.Personne
 {
     public class MedicalStaff
     {

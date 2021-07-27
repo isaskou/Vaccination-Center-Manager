@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VaccinationManager.Models.Adresse;
-using VaccinationManager.Models.Person;
+using VaccinationManager.Models.Personne;
 using VaccinationManager.Models.RendezVous;
 using VaccinationManager.Models.Vaccin;
 
@@ -26,7 +26,7 @@ namespace VaccinationManager.Models.Center
         //Pour la OneToOne
         public Adress Adress { get; set; }
 
-        [Required]
+        //[Required]
         public int ManagerId { get; set; }
 
         //POur la OneToOne
@@ -39,5 +39,8 @@ namespace VaccinationManager.Models.Center
         public IEnumerable<Appointment> Appointments { get; set; }
 
         public IEnumerable<VaccinLot> VaccinLots { get; set; }
+
+        public IEnumerable<Staff> Staffs { get; set; }
+
     }
 }
