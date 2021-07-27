@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VaccinationManager.DAL;
-using VaccinationManager.Models.Person;
+using VaccinationManager.Models.Personne;
 using VaccinationManager.Services.Base;
 using VaccinationManager.Services.Interfaces;
 using VaccinationManager.Tools;

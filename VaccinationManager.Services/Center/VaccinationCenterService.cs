@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using VaccinationManager.DAL;
 using VaccinationManager.Models.Adresse;
 using VaccinationManager.Models.Center;
-using VaccinationManager.Models.Person;
+using VaccinationManager.Models.Personne;
 using VaccinationManager.Services.Base;
 using VaccinationManager.Services.Interfaces;
 
@@ -33,7 +33,14 @@ namespace VaccinationManager.Services.Center
 
         public IEnumerable<VaccinationCenter> GetAll()
         {
-            return _dc.vaccinationCenters.ToList();
+            Person person = new Person();
+            Adress adress = new Adress();
+            IEnumerable<VaccinationCenter> entities = _dc.vaccinationCenters
+                                        .Include(c => c.Adress).Where(c => c.AdressId == adress.Id)
+                                        .Include(c => c.Manager)
+                                        .Where(c => c.ManagerId == person.Id)
+                                        ;
+            return entities.ToList();
 
 
         }
