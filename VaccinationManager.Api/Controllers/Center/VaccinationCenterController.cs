@@ -32,7 +32,7 @@ namespace VaccinationManager.Api.Controllers.Center
         {
             try
             {
-                return Ok(_repo.GetFullAll());
+                return Ok(_repo.GetAll());
             }
             catch (Exception ex)
             {

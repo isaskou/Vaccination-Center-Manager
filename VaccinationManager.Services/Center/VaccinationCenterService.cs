@@ -33,14 +33,7 @@ namespace VaccinationManager.Services.Center
 
         public IEnumerable<VaccinationCenter> GetAll()
         {
-            Person person = new Person();
-            Adress adress = new Adress();
-            IEnumerable<VaccinationCenter> entities = _dc.vaccinationCenters
-                                        .Include(c => c.Adress).Where(c => c.AdressId == adress.Id)
-                                        .Include(c => c.Manager)
-                                        .Where(c => c.ManagerId == person.Id)
-                                        ;
-            return entities.ToList();
+            return _dc.vaccinationCenters.ToList();
 
 
         }
@@ -49,11 +42,21 @@ namespace VaccinationManager.Services.Center
         {
             List<VaccinationCenter> centerList = _dc.vaccinationCenters
                                                     .Include(cl => cl.Adress)
-                                                    .Include(cl => cl.Manager)
-                                                    
+                                                    .Include(cl => cl.Manager).ThenInclude(m=>m.Staff).ThenInclude(s=>s.Person)                                                    
                                                     .ToList();
 
-            return centerList;
+            return centerList.Select(e =>
+                new VaccinationCenter
+                {
+                    Id = e.Id,
+                    Name = e.Name,
+                    AdressId = e.AdressId,
+                    Adress = e.Adress,
+                    ManagerId = e.ManagerId,
+                    Manager = e.Manager
+                }
+                )
+                    ;
 
 
 
