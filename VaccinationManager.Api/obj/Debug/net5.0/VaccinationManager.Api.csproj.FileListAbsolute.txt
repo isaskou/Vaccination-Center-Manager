@@ -66,3 +66,8 @@ D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Api\o
 D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Api\obj\Debug\net5.0\VaccinationManager.Api.pdb
 D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Api\obj\Debug\net5.0\VaccinationManager.Api.genruntimeconfig.cache
 D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Api\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Api\bin\Debug\net5.0\System.IO.Pipelines.dll
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Api\bin\Debug\net5.0\Humanizer.dll
+D:\TFTic\NET_BI_SHAREPOINT\Labo .NET\VaccinationManager\VaccinationManager.Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
