@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VaccinationManager.Models.Person;
+using VaccinationManager.Models.Personne;
 using VaccinationManager.Tools;
 using VaccinationManager.Tools.SecurityTools;
 

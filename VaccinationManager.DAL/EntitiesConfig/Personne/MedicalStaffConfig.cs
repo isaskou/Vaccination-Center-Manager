@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VaccinationManager.Models.Person;
+using VaccinationManager.Models.Personne;
 
 namespace VaccinationManager.DAL.EntitiesConfig.Personne
 {
@@ -23,9 +23,9 @@ namespace VaccinationManager.DAL.EntitiesConfig.Personne
                 .IsRequired();
 
             builder.HasOne(ms => ms.Staff)
-                .WithMany(s => s.medicalStaffs)
-                .HasForeignKey(ms => ms.StaffId)
-                .OnDelete(DeleteBehavior.NoAction)
+                .WithOne(s => s.MedicalStaff)
+                .HasForeignKey<MedicalStaff>(ms => ms.StaffId)
+                .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
             
         }

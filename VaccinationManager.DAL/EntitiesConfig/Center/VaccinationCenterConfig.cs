@@ -32,7 +32,7 @@ namespace VaccinationManager.DAL.EntitiesConfig.Center
             builder.HasOne(vc => vc.Manager)
                 .WithOne(ms => ms.VaccinationCenter)
                 .HasForeignKey<VaccinationCenter>(vc=>vc.ManagerId)
-                .OnDelete(DeleteBehavior.NoAction)
+                .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
         }
     }

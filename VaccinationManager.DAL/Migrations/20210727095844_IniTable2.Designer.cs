@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VaccinationManager.DAL;
 
 namespace VaccinationManager.DAL.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210727095844_IniTable2")]
+    partial class IniTable2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -335,7 +337,7 @@ namespace VaccinationManager.DAL.Migrations
                     b.HasCheckConstraint("CK_OutDateQuantity", "Quantity >0");
                 });
 
-            modelBuilder.Entity("VaccinationManager.Models.Personne.MedicalStaff", b =>
+            modelBuilder.Entity("VaccinationManager.Models.Person.MedicalStaff", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -365,7 +367,7 @@ namespace VaccinationManager.DAL.Migrations
                         });
                 });
 
-            modelBuilder.Entity("VaccinationManager.Models.Personne.Patient", b =>
+            modelBuilder.Entity("VaccinationManager.Models.Person.Patient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -400,7 +402,7 @@ namespace VaccinationManager.DAL.Migrations
                     b.ToTable("Patient");
                 });
 
-            modelBuilder.Entity("VaccinationManager.Models.Personne.Person", b =>
+            modelBuilder.Entity("VaccinationManager.Models.Person.Person", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -453,12 +455,12 @@ namespace VaccinationManager.DAL.Migrations
                             Email = "isabel@mail.be",
                             FirstName = "Isabel",
                             LastName = "Skou",
-                            Password = new byte[] { 19, 139, 197, 194, 66, 210, 13, 246, 79, 2, 200, 251, 42, 123, 164, 247, 39, 68, 40, 71, 147, 139, 238, 58, 212, 176, 54, 240, 174, 108, 234, 33 },
-                            Salt = "3519db0b-f01e-48ea-b1e5-0252f8d8c75a"
+                            Password = new byte[] { 25, 63, 201, 131, 112, 197, 228, 194, 41, 68, 41, 81, 1, 41, 143, 63, 253, 157, 41, 3, 135, 160, 173, 171, 243, 130, 106, 117, 62, 195, 141, 89 },
+                            Salt = "16f979e2-0ecc-4100-b330-78d61aaf3c22"
                         });
                 });
 
-            modelBuilder.Entity("VaccinationManager.Models.Personne.Staff", b =>
+            modelBuilder.Entity("VaccinationManager.Models.Person.Staff", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -472,14 +474,9 @@ namespace VaccinationManager.DAL.Migrations
                     b.Property<int>("PersonId")
                         .HasColumnType("int");
 
-                    b.Property<int>("VaccinationCenterId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("PersonId");
-
-                    b.HasIndex("VaccinationCenterId");
 
                     b.ToTable("Staff");
 
@@ -488,8 +485,7 @@ namespace VaccinationManager.DAL.Migrations
                         {
                             Id = 1,
                             Grade = "Medecin",
-                            PersonId = 1,
-                            VaccinationCenterId = 0
+                            PersonId = 1
                         });
                 });
 
@@ -642,10 +638,10 @@ namespace VaccinationManager.DAL.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("VaccinationManager.Models.Personne.MedicalStaff", "Manager")
+                    b.HasOne("VaccinationManager.Models.Person.MedicalStaff", "Manager")
                         .WithOne("VaccinationCenter")
                         .HasForeignKey("VaccinationManager.Models.Center.VaccinationCenter", "ManagerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Adress");
@@ -661,7 +657,7 @@ namespace VaccinationManager.DAL.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("VaccinationManager.Models.Personne.MedicalStaff", "MedicalStaff")
+                    b.HasOne("VaccinationManager.Models.Person.MedicalStaff", "MedicalStaff")
                         .WithMany("Injections")
                         .HasForeignKey("MedicalStaffId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -691,26 +687,26 @@ namespace VaccinationManager.DAL.Migrations
                     b.Navigation("VaccinLot");
                 });
 
-            modelBuilder.Entity("VaccinationManager.Models.Personne.MedicalStaff", b =>
+            modelBuilder.Entity("VaccinationManager.Models.Person.MedicalStaff", b =>
                 {
-                    b.HasOne("VaccinationManager.Models.Personne.Staff", "Staff")
-                        .WithOne("MedicalStaff")
-                        .HasForeignKey("VaccinationManager.Models.Personne.MedicalStaff", "StaffId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("VaccinationManager.Models.Person.Staff", "Staff")
+                        .WithOne("medicalStaff")
+                        .HasForeignKey("VaccinationManager.Models.Person.MedicalStaff", "StaffId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Staff");
                 });
 
-            modelBuilder.Entity("VaccinationManager.Models.Personne.Patient", b =>
+            modelBuilder.Entity("VaccinationManager.Models.Person.Patient", b =>
                 {
                     b.HasOne("VaccinationManager.Models.Adresse.Adress", "Adress")
                         .WithOne("Patient")
-                        .HasForeignKey("VaccinationManager.Models.Personne.Patient", "AdressId")
+                        .HasForeignKey("VaccinationManager.Models.Person.Patient", "AdressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("VaccinationManager.Models.Personne.Person", "Person")
+                    b.HasOne("VaccinationManager.Models.Person.Person", "Person")
                         .WithMany("Patients")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -721,23 +717,15 @@ namespace VaccinationManager.DAL.Migrations
                     b.Navigation("Person");
                 });
 
-            modelBuilder.Entity("VaccinationManager.Models.Personne.Staff", b =>
+            modelBuilder.Entity("VaccinationManager.Models.Person.Staff", b =>
                 {
-                    b.HasOne("VaccinationManager.Models.Personne.Person", "Person")
+                    b.HasOne("VaccinationManager.Models.Person.Person", "Person")
                         .WithMany("Staffs")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("VaccinationManager.Models.Center.VaccinationCenter", "VaccinationCenter")
-                        .WithMany("Staffs")
-                        .HasForeignKey("VaccinationCenterId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
                     b.Navigation("Person");
-
-                    b.Navigation("VaccinationCenter");
                 });
 
             modelBuilder.Entity("VaccinationManager.Models.RendezVous.Appointment", b =>
@@ -754,7 +742,7 @@ namespace VaccinationManager.DAL.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("VaccinationManager.Models.Personne.Patient", "Patient")
+                    b.HasOne("VaccinationManager.Models.Person.Patient", "Patient")
                         .WithMany("Appointments")
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -836,8 +824,6 @@ namespace VaccinationManager.DAL.Migrations
 
                     b.Navigation("ScheduleCenters");
 
-                    b.Navigation("Staffs");
-
                     b.Navigation("VaccinLots");
                 });
 
@@ -846,28 +832,28 @@ namespace VaccinationManager.DAL.Migrations
                     b.Navigation("VaccinLots");
                 });
 
-            modelBuilder.Entity("VaccinationManager.Models.Personne.MedicalStaff", b =>
+            modelBuilder.Entity("VaccinationManager.Models.Person.MedicalStaff", b =>
                 {
                     b.Navigation("Injections");
 
                     b.Navigation("VaccinationCenter");
                 });
 
-            modelBuilder.Entity("VaccinationManager.Models.Personne.Patient", b =>
+            modelBuilder.Entity("VaccinationManager.Models.Person.Patient", b =>
                 {
                     b.Navigation("Appointments");
                 });
 
-            modelBuilder.Entity("VaccinationManager.Models.Personne.Person", b =>
+            modelBuilder.Entity("VaccinationManager.Models.Person.Person", b =>
                 {
                     b.Navigation("Patients");
 
                     b.Navigation("Staffs");
                 });
 
-            modelBuilder.Entity("VaccinationManager.Models.Personne.Staff", b =>
+            modelBuilder.Entity("VaccinationManager.Models.Person.Staff", b =>
                 {
-                    b.Navigation("MedicalStaff");
+                    b.Navigation("medicalStaff");
                 });
 
             modelBuilder.Entity("VaccinationManager.Models.RendezVous.Appointment", b =>

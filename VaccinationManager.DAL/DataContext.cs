@@ -14,7 +14,7 @@ using VaccinationManager.DAL.EntitiesConfig.Vaccin;
 using VaccinationManager.Models;
 using VaccinationManager.Models.Adresse;
 using VaccinationManager.Models.Center;
-using VaccinationManager.Models.Person;
+using VaccinationManager.Models.Personne;
 using VaccinationManager.Models.RendezVous;
 using VaccinationManager.Models.Vaccin;
 
@@ -22,18 +22,18 @@ namespace VaccinationManager.DAL
 {
     public class DataContext : DbContext
     {
-        private readonly string _cnstr;
+        //private readonly string _cnstr;
 
 
-        public DataContext()
-        {
-            _cnstr = @"server=LAPTOP-03RLPA2O;Database=VaccinationManager; Integrated Security=True;";
-        }
+        //public DataContext()
+        //{
+        //    _cnstr = @"server=LAPTOP-03RLPA2O;Database=VaccinationManager; Integrated Security=True;";
+        //}
 
-        public DataContext(string cnstr)
-        {
-            _cnstr = cnstr;
-        }
+        //public DataContext(string cnstr)
+        //{
+        //    _cnstr = cnstr;
+        //}
 
 
         public DataContext(DbContextOptions options) : base(options)
@@ -70,7 +70,8 @@ namespace VaccinationManager.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_cnstr);
+            //optionsBuilder.UseSqlServer(_cnstr);
+            base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
